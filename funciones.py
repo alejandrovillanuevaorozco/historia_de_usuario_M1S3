@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import json
 import csv
 #Validar numeros
 def validate_numbers(mensaje):
-=======
-#Validar numeros
-def validar_numeros(mensaje):
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
     valido = False
     while not valido:
         try:
@@ -19,7 +14,6 @@ def validar_numeros(mensaje):
         except ValueError:
             print("Debe ingresar un número válido.")
     return num
-<<<<<<< HEAD
 #validar string vacios y sin numeros
 def validate_field(message):
     validate=False
@@ -55,32 +49,6 @@ def read(inventory):
         print("Inventario vacio, Por favor añade productos al inventario")
     else:
         for clave, datos in inventory.items():
-=======
-#Crear diccionario de diccionario
-def create(inventario,clave):
-    mensaje="¿Cuantos productos quieres añadir en el inventario?"
-    n=validar_numeros(mensaje)
-    i=1
-    while i<=n:
-        clave = clave+1
-        nombre=input("Introduce el nombre del producto: ")
-        mensaje="Introduce el precio del producto"
-        precio=validar_numeros(mensaje)
-        mensaje="Introduce la cantidad del producto: "
-        cantidad=validar_numeros(mensaje)
-        inventario[clave] = {"nombre_producto":nombre,"precio_producto":precio, "cantidad_producto":cantidad}
-        i=i+1
-    print(inventario)
-    return inventario
-#Mostrar diccionario de diccionario
-def read(inventario):
-    clave=len(inventario)
-    if clave == 0:
-        print("Inventario vacio")
-    else:
-        print("==INVENTARIO==\n")
-        for clave, datos in inventario.items():
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
             nombre=datos["nombre_producto"]
             precio=datos["precio_producto"]
             cantidad=datos["cantidad_producto"]
@@ -91,17 +59,10 @@ def read(inventario):
                 "\n")
             print("-----------------------------------------")
 #buscar en diccionario de diccionario
-<<<<<<< HEAD
 def search_product(inventory):
     clave=len(inventory)
     if clave == 0:
         print("Inventario vacio, Por favor añade productos al inventario")
-=======
-def buscar_producto(inventario):
-    clave=len(inventario)
-    if clave == 0:
-        print("Inventario vacio")
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
     else:
         opcion="x"
         while opcion!="3":
@@ -113,55 +74,31 @@ def buscar_producto(inventario):
                     )
             match opcion:
                 case "1":
-<<<<<<< HEAD
                     print("===Busqueda por ID===")
                     mensaje="Ingrese el id a buscar"
                     id_buscado=validate_numbers(mensaje)
                     valid=inventory.get(id_buscado, "No se encontró el dato proporcionado")
-=======
-                    print("Busqueda por ID: ")
-                    mensaje="Ingrese el id a buscar"
-                    id_buscado=validar_numeros(mensaje)
-                    valid=inventario.get(id_buscado, "No se encontró el dato proporcionado")
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
                     print(valid)
                     if valid!="No se encontró el dato proporcionado":
                         valid=id_buscado
                     return valid
                 case "2":
-<<<<<<< HEAD
                     print("===Busqueda por nombre del producto===")
-=======
-                    print("Busqueda por nombre del producto: ")
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
                     nombre_buscado=input("Ingrese el nombre del producto a buscar: ")
                     valid = "No se encontró el dato proporcionado"
                     nombre=""
 
-<<<<<<< HEAD
                     for clave, producto in inventory.items():
                         if producto["nombre_producto"].upper() == nombre_buscado.upper():
-=======
-                    for clave, producto in inventario.items():
-                        if producto["nombre_producto"] == nombre_buscado:
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
                             nombre=producto["nombre_producto"]
                             precio=producto["precio_producto"]
                             cantidad=producto["cantidad_producto"]
                             valid=clave
-<<<<<<< HEAD
                     if nombre.upper()==nombre_buscado.upper():
-=======
-                    if nombre==nombre_buscado:
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
                         print("Nombre del producto: ", nombre,
                             "\nPrecio: ", precio,
                             "\nCantidad: ", cantidad,
                             "\n")
-<<<<<<< HEAD
-=======
-                        print("-----------------------------------------")
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
                         return valid
                     else:
                         print(valid)
@@ -170,7 +107,6 @@ def buscar_producto(inventario):
                     continue
                 case _:
                     print("Opcion invalida, por favor solo digite números del 1 al 9")
-<<<<<<< HEAD
 #actualizar diccionario
 def update(inventory):
     clave=len(inventory)
@@ -363,62 +299,3 @@ def upload_CSV(filename="datos.csv"):
     except Exception as e:
         print(f"Error inesperado al cargar el CSV: {e}")
         return {}
-=======
-#Eliminar campos
-def delete(inventario):
-    print("Eliminación por ID: ")
-    print("Por favor, primero busque el Id o nombre a eliminar... ")
-    id_eliminado=buscar_producto(inventario)
-    print(id_eliminado)
-    if id_eliminado!="No se encontró el dato proporcionado":
-        print("Se borrarán los todos los campos del ID: ", id_eliminado)
-        op="x"
-        while op!="S".upper() and op!="N".upper():
-                    op = input("¿Desea eliminarlos? (S/N): ").upper()
-                    if op != "S".upper() and op!="N".upper():
-                        print("Dato ingresado erronéo, por favor solo coloca 'S' o 'N'")
-                    if op=="S".upper():
-                        del inventario[id_eliminado]
-                        print("Campos eliminados")
-                    elif op=="N".upper():
-                        print("Campos no eliminados")
-                        continue
-#Estadisticas
-def estadisticas(inventario):
-    unidades_totales=0
-    valor_total=0
-    producto_mayor_stock=""
-    cantidad_mayor_stock=0
-    producto_mas_caro=""
-    precio_mas_caro=0
-    clave=len(inventario)
-    if clave == 0:
-        print("Inventario vacio")
-    else:
-        print("==ESTADISTICAS==\n")
-        for clave, datos in inventario.items():
-            nombre=datos["nombre_producto"]
-            precio=datos["precio_producto"]
-            cantidad=datos["cantidad_producto"]
-            unidades_totales=unidades_totales+cantidad
-            valor_total=precio*cantidad
-            if precio_mas_caro<=precio:
-                precio_mas_caro=precio
-                producto_mas_caro=nombre
-            if cantidad_mayor_stock<=cantidad:
-                cantidad_mayor_stock=cantidad
-                producto_mayor_stock=nombre
-            
-            print("Nombre del producto: ", nombre,
-                "\nValor total: ", valor_total,
-                "\n")
-            print("-----------------------------------------")
-
-    print("Producto más caro: ", producto_mas_caro,
-        "\nPrecio del producto: ", precio_mas_caro,
-        "\nProducto de mayor stock: ", producto_mayor_stock,
-        "\nCantidad del producto: ", cantidad_mayor_stock,
-        "\nUnidades totales: ", unidades_totales,
-        "\n")
-    print("-----------------------------------------")
->>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
