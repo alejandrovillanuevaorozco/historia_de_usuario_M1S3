@@ -40,7 +40,7 @@ inventario = {
 | `precio_producto` | `int` | Precio unitario (≥ 0) |
 | `cantidad_producto` | `int` | Stock disponible (≥ 0) |
 
-## 🚀 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 ### **1. Menú Principal (app.py)**
 Agregar productos
@@ -98,34 +98,22 @@ import csv     # Persistencia CSV
 
 ## Flujo de Ejecución
 
-```mermaid
-graph TD
-    A[Inicio] --> B[MENÚ PRINCIPAL]
-    B --> C{Opción?}
-    C -->|1| D[create()]
-    C -->|2| E[read()]
-    C -->|3| F[search_product()]
-    C -->|4| G[update()]
-    C -->|5| H[delete()]
-    C -->|6| I[estadisticas()]
-    C -->|7| J[save_json()]
-    C -->|8| K[upload_json()]
-    C -->|9| L[save_CSV()]
-    C -->|10| M[upload_CSV()]
-    C -->|11| N[Salir]
-    D --> B
-    E --> B
-    F --> B
-    G --> B
-    H --> B
-    I --> B
-    J --> B
-    K --> B
-    L --> B
-    M --> B
-```
+
 
 ## Ejemplo de Uso
+INICIO → Menú Principal → [Opción]
+↓
+├─ 1: create() → Menú
+├─ 2: read() → Menú
+├─ 3: search_product() → Menú
+├─ 4: update() → Menú
+├─ 5: delete() → Menú
+├─ 6: estadisticas() → Menú
+├─ 7: save_json() → Menú
+├─ 8: upload_json() → Menú
+├─ 9: save_CSV() → Menú
+├─ 10: upload_CSV() → Menú
+└─ 11: SALIR ← Fin
 
 ```bash
 # 1. Agregar productos
