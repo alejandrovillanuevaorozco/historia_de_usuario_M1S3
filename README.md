@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema de Gestión de Inventario - Python
 
 ## Descripción General
@@ -174,3 +175,7 @@ Opción 10 → Carga datos.csv
 *Desarrollador Junior | Ingeniero de Sistemas*
 
 ---
+=======
+# historia_de_usuario_M1S3
+Inventario avanzado con colecciones y persistencia en archivos
+>>>>>>> c4844fc8f169f85d6ff007e50cfbd059f1ff78ee
