@@ -1,0 +1,17 @@
+{
+    "1": {
+        "nombre_producto": "WICHO",
+        "precio_producto": 1,
+        "cantidad_producto": 1
+    },
+    "2": {
+        "nombre_producto": "B",
+        "precio_producto": 2,
+        "cantidad_producto": 2
+    },
+    "3": {
+        "nombre_producto": "C",
+        "precio_producto": 3,
+        "cantidad_producto": 3
+    }
+}
