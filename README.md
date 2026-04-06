@@ -97,23 +97,22 @@ import csv     # Persistencia CSV
 ```
 
 ## Flujo de Ejecución
-
+INICIO → Menú Principal → [Opción]
+↓
+1: create() → Menú
+2: read() → Menú
+3: search_product() → Menú
+4: update() → Menú
+5: delete() → Menú
+6: estadisticas() → Menú
+7: save_json() → Menú
+8: upload_json() → Menú
+9: save_CSV() → Menú
+10: upload_CSV() → Menú
+11: SALIR ← Fin
 
 
 ## Ejemplo de Uso
-INICIO → Menú Principal → [Opción]
-↓
-├─ 1: create() → Menú
-├─ 2: read() → Menú
-├─ 3: search_product() → Menú
-├─ 4: update() → Menú
-├─ 5: delete() → Menú
-├─ 6: estadisticas() → Menú
-├─ 7: save_json() → Menú
-├─ 8: upload_json() → Menú
-├─ 9: save_CSV() → Menú
-├─ 10: upload_CSV() → Menú
-└─ 11: SALIR ← Fin
 
 ```bash
 # 1. Agregar productos
